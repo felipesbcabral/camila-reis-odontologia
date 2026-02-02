@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export function WhatsAppButton() {
   const handleClick = () => {
@@ -29,7 +29,7 @@ export function WhatsAppButton() {
 
       {/* Button */}
       <div className="relative w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
-        <MessageCircle className="w-7 h-7 text-white fill-white" />
+        <WhatsAppIcon className="w-7 h-7 text-white" />
       </div>
     </motion.button>
   );

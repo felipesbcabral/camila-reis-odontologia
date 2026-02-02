@@ -1,17 +1,20 @@
 import { motion } from 'framer-motion';
-import { MapPin, Phone, MessageCircle, Mail, Clock, Instagram, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram, Send, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { usePhoneMask } from '@/hooks/usePhoneMask';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 const contactInfo = [
   {
     icon: MapPin,
     label: 'Endereço',
     value: 'Brasília Shopping, Torre Sul, Sala 504\nAsa Sul, Brasília - DF',
-    href: '#',
+    href: 'https://maps.google.com/?q=Brasília+Shopping+Torre+Sul+Sala+504+Brasília+DF',
+    isExternal: true,
   },
   {
     icon: Phone,
@@ -20,16 +23,18 @@ const contactInfo = [
     href: 'tel:+556133288000',
   },
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     label: 'WhatsApp',
     value: '(61) 98286-2014',
     href: 'https://wa.me/5561982862014',
+    isExternal: true,
+    isBrand: true,
   },
   {
     icon: Mail,
     label: 'E-mail',
     value: 'institutocamilareis@gmail.com',
-    href: 'mailto:contato@camilareis.com.br',
+    href: 'mailto:institutocamilareis@gmail.com',
   },
   {
     icon: Clock,
@@ -41,7 +46,7 @@ const contactInfo = [
 
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/dra_camila_reis', label: 'Instagram' },
-  { icon: MessageCircle, href: 'https://wa.me/5561982862014', label: 'WhatsApp' },
+  { icon: WhatsAppIcon, href: 'https://wa.me/5561982862014', label: 'WhatsApp', isBrand: true },
 ];
 
 export function Contact() {
@@ -122,17 +127,28 @@ export function Contact() {
                 <motion.a
                   key={item.label}
                   href={item.href}
+                  target={item.isExternal ? "_blank" : undefined}
+                  rel={item.isExternal ? "noopener noreferrer" : undefined}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
                   className="flex items-start gap-4 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-400 transition-colors duration-300">
-                    <item.icon className="w-5 h-5 text-rose-400 group-hover:text-white transition-colors" />
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${item.isBrand ? 'bg-green-100 group-hover:bg-green-500' : 'bg-rose-100 group-hover:bg-rose-400'}`}>
+                    {item.isBrand ? (
+                      <item.icon className={`w-5 h-5 transition-colors ${item.label === 'WhatsApp' ? 'text-green-600 group-hover:text-white' : ''}`} />
+                    ) : (
+                      <item.icon className="w-5 h-5 text-rose-400 group-hover:text-white transition-colors" />
+                    )}
                   </div>
-                  <div>
-                    <p className="text-dark font-medium mb-1">{item.label}</p>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <p className="text-dark font-medium mb-1">{item.label}</p>
+                      {item.isExternal && item.label === 'Endereço' && (
+                        <ExternalLink className="w-3 h-3 text-rose-400" />
+                      )}
+                    </div>
                     <p className="text-dark-500 text-sm whitespace-pre-line">
                       {item.value}
                     </p>
@@ -156,7 +172,7 @@ export function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center text-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 hover:scale-110"
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 ${social.isBrand ? 'bg-green-100 hover:bg-green-500 text-green-600 hover:text-white' : 'bg-rose-100 hover:bg-rose-400 text-rose-400 hover:text-white'}`}
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -165,17 +181,67 @@ export function Contact() {
               </div>
             </motion.div>
 
-            {/* WhatsApp CTA */}
+            {/* Google Maps */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7, duration: 0.5 }}
-              className="mt-10 p-6 bg-white rounded-2xl shadow-card border border-rose-100"
+              className="mt-8 sm:mt-10"
+            >
+              <a 
+                href="https://maps.google.com/?q=Brasília+Shopping+Torre+Sul+Sala+504+Brasília+DF"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
+                <div className="relative overflow-hidden rounded-2xl bg-rose-50 border border-rose-100 shadow-card hover:shadow-card-hover transition-all duration-500">
+                  {/* Map Preview */}
+                  <div className="relative h-48 sm:h-56 overflow-hidden">
+                    <OptimizedImage
+                      src="/images/clinic/recepcao-1.jpg"
+                      alt="Localização Instituto Odontológico Camila Reis"
+                      className="w-full h-full opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+                    />
+                    {/* Overlay with pin */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex flex-col items-center">
+                        <div className="w-14 h-14 bg-rose-400 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-2">
+                          <MapPin className="w-7 h-7 text-white" />
+                        </div>
+                        <span className="bg-white/90 backdrop-blur-sm text-dark text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                          Ver no Google Maps
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Address info */}
+                  <div className="p-4 bg-white">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-dark font-medium text-sm">Brasília Shopping</p>
+                        <p className="text-dark-400 text-xs">Torre Sul, Sala 504 - Asa Sul</p>
+                      </div>
+                      <div className="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center group-hover:bg-rose-400 transition-colors duration-300">
+                        <ExternalLink className="w-4 h-4 text-rose-400 group-hover:text-white transition-colors" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </motion.div>
+
+            {/* WhatsApp CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="mt-6 sm:mt-8 p-6 bg-white rounded-2xl shadow-card border border-rose-100"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
-                  <MessageCircle className="w-6 h-6 text-white" />
+                  <WhatsAppIcon className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <p className="text-dark font-medium">Fale pelo WhatsApp</p>
