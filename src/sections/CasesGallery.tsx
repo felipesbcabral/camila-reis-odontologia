@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ZoomIn } from 'lucide-react';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 const categories = ['Todos', 'Invisalign', 'Aparelho HAAS', 'Infantil'];
 
@@ -112,10 +113,10 @@ export function CasesGallery() {
                   {/* Images Container */}
                   <div className="relative aspect-square overflow-hidden">
                     {/* Before Image */}
-                    <img
+                    <OptimizedImage
                       src={caseItem.beforeImage}
-                      alt={`${caseItem.title} - Antes`}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      alt={`${caseItem.title} - Antes do tratamento`}
+                      className="absolute inset-0 w-full h-full"
                     />
 
                     {/* After Image with Clip */}
@@ -123,10 +124,10 @@ export function CasesGallery() {
                       className="absolute inset-0 w-full h-full transition-all duration-700 group-hover:[clip-path:inset(0_0_0_50%)]"
                       style={{ clipPath: 'inset(0 50% 0 0)' }}
                     >
-                      <img
+                      <OptimizedImage
                         src={caseItem.afterImage}
-                        alt={`${caseItem.title} - Depois`}
-                        className="w-full h-full object-cover"
+                        alt={`${caseItem.title} - Depois do tratamento`}
+                        className="absolute inset-0 w-full h-full"
                       />
                     </div>
 
@@ -210,17 +211,17 @@ export function CasesGallery() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <img
+                  <OptimizedImage
                     src={selectedCase.beforeImage}
-                    alt="Antes"
+                    alt="Antes do tratamento"
                     className="w-full rounded-2xl"
                   />
                   <p className="text-center text-white/60 mt-2">Antes</p>
                 </div>
                 <div>
-                  <img
+                  <OptimizedImage
                     src={selectedCase.afterImage}
-                    alt="Depois"
+                    alt="Depois do tratamento"
                     className="w-full rounded-2xl"
                   />
                   <p className="text-center text-rose-400 mt-2">Depois</p>

@@ -10,6 +10,8 @@ import { Services } from './sections/Services';
 import { Testimonials } from './sections/Testimonials';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
+import { WhatsAppButton } from './components/WhatsAppButton';
+import { CookieConsent } from './components/CookieConsent';
 import './App.css';
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
+      <CookieConsent />
     </motion.div>
   );
 }

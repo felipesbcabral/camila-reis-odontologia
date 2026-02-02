@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Scan, Sparkles, ScanLine, Check } from 'lucide-react';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 const technologies = [
   {
@@ -82,9 +83,9 @@ export function Technology() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-dark-700 rounded-3xl p-8 lg:p-12 border border-rose-400/20 shadow-rose-glow">
             {/* Image */}
             <div className="order-2 lg:order-1">
-              <img
+              <OptimizedImage
                 src={technologies[0].image}
-                alt={technologies[0].name}
+                alt={`${technologies[0].name} - Scanner intraoral 3D`}
                 className="w-full rounded-2xl"
               />
             </div>

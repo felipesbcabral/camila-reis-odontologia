@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { usePhoneMask } from '@/hooks/usePhoneMask';
 
 const contactInfo = [
   {
@@ -44,6 +45,8 @@ const socialLinks = [
 ];
 
 export function Contact() {
+  const phoneMask = usePhoneMask();
+
   /* 
     Função para formatar e enviar mensagem via WhatsApp 
     Isso facilita o trabalho da recepção já entregando os dados prontos.
@@ -229,6 +232,9 @@ export function Contact() {
                       id="phone"
                       type="tel"
                       placeholder="(61) 99999-9999"
+                      value={phoneMask.value}
+                      onChange={phoneMask.onChange}
+                      maxLength={15}
                       className="border-rose-100 focus:border-rose-400 focus:ring-rose-400/20 rounded-xl py-3"
                       required
                     />

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Award, Globe, BookOpen } from 'lucide-react';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 const highlights = [
   {
@@ -45,10 +46,11 @@ export function About() {
             className="relative"
           >
             <div className="relative">
-              <img
+              <OptimizedImage
                 src="/images/camila-portrait.jpg"
-                alt="Instituto Odontológico Camila Reis"
-                className="w-full rounded-3xl shadow-card object-cover aspect-[3/4]"
+                alt="Dra. Camila Reis - Ortodontista em Brasília"
+                className="w-full rounded-3xl shadow-card"
+                aspectRatio="aspect-[3/4]"
               />
 
               {/* Floating Stats Card */}

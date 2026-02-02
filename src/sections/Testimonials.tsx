@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 const testimonials = [
   {
@@ -127,10 +128,10 @@ export function Testimonials() {
 
                 {/* Author */}
                 <div className="flex items-center justify-center gap-4">
-                  <img
+                  <OptimizedImage
                     src={testimonials[currentIndex].image}
                     alt={testimonials[currentIndex].name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-rose-400"
+                    className="w-14 h-14 rounded-full border-2 border-rose-400"
                   />
                   <div className="text-left">
                     <p className="text-white font-medium">

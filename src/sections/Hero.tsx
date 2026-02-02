@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Award, TrendingUp, Users, Calendar } from 'lucide-react';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -166,10 +167,11 @@ export function Hero() {
           >
             <div className="relative">
               {/* Main Image */}
-              <img
+              <OptimizedImage
                 src="/images/camila-portrait.jpg"
-                alt="Instituto Odontológico Camila Reis"
-                className="w-full max-w-lg mx-auto lg:max-w-none rounded-3xl shadow-card object-cover aspect-[3/4]"
+                alt="Instituto Odontológico Camila Reis - Dra. Camila Reis"
+                className="w-full max-w-lg mx-auto lg:max-w-none rounded-3xl shadow-card"
+                aspectRatio="aspect-[3/4]"
               />
 
               {/* Floating Badge - Availability */}
