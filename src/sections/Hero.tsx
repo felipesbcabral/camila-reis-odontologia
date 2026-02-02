@@ -55,7 +55,7 @@ export function Hero() {
     offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const scrollToSection = (href: string) => {
@@ -102,8 +102,8 @@ export function Hero() {
               variants={itemVariants}
               className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] font-medium text-dark leading-[1.1] mb-4 sm:mb-6"
             >
-              Transforme seu sorriso com{' '}
-              <span className="text-rose-400">quem é referência</span>
+              O sorriso dos seus sonhos começa{' '}
+              <span className="text-rose-400">com quem entende de excelência</span>
             </motion.h1>
 
             {/* Subheading */}
@@ -111,7 +111,7 @@ export function Hero() {
               variants={itemVariants}
               className="text-dark-500 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg"
             >
-              Instituto Odontológico Camila Reis. Tecnologia de ponta para resultados extraordinários.
+              Transforme sua autoestima com um sorriso que reflete sua verdadeira beleza. Tecnologia de ponta, resultados que emocionam.
             </motion.p>
 
             {/* CTAs */}
@@ -124,7 +124,7 @@ export function Hero() {
                   onClick={() => scrollToSection('#contato')}
                   className="bg-rose-400 hover:bg-rose-500 text-white rounded-full px-6 sm:px-8 py-3 text-sm font-medium transition-all duration-300 hover:shadow-button w-full"
                 >
-                  Agendar Avaliação
+                  Quero meu sorriso ideal
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
@@ -133,7 +133,7 @@ export function Hero() {
                   variant="outline"
                   className="border-dark-200 text-dark hover:bg-dark hover:text-white rounded-full px-6 sm:px-8 py-3 text-sm font-medium transition-all duration-300 w-full"
                 >
-                  Ver Casos Reais
+                  Ver transformações
                 </Button>
               </motion.div>
             </motion.div>

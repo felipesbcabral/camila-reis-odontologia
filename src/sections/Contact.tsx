@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Instagram, Send, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { usePhoneMask } from '@/hooks/usePhoneMask';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
@@ -53,8 +52,7 @@ export function Contact() {
   const phoneMask = usePhoneMask();
 
   /* 
-    Função para formatar e enviar mensagem via WhatsApp 
-    Isso facilita o trabalho da recepção já entregando os dados prontos.
+    Função para enviar mensagem via WhatsApp - Formulário simplificado
   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,29 +61,18 @@ export function Contact() {
     const formData = new FormData(e.target as HTMLFormElement);
     const name = formData.get('name') as string;
     const phone = formData.get('phone') as string;
-    const email = formData.get('email') as string;
-    const service = formData.get('service') as string;
-    const message = formData.get('message') as string;
 
     // Formata a mensagem para o WhatsApp
-    // Formata a mensagem para o WhatsApp com Unicode escapes para evitar erros de encoding
-    // \u2728 = Sparkles (✨)
-
     const whatsappMessage =
-      `*Instituto Odontológico Camila Reis* \u2728\n` +
-      `_Gostaria de agendar uma avaliação?_\n\n` +
-      `*Nome:* ${name}\n` +
-      `*Telefone:* ${phone}\n` +
-      `*Email:* ${email}\n` +
-      `*Interesse:* ${service || 'Não especificado'}\n` +
-      `*Mensagem:* ${message || 'Sem mensagem adicional'}\n\n` +
-      `--------------------------------\n` +
-      `Mensagem enviada via formulário do site.`;
+      `*Instituto Odontológico Camila Reis* \u2728\n\n` +
+      `Olá! Meu nome é *${name}* e gostaria de agendar uma avaliação.\n` +
+      `Meu telefone: ${phone}\n\n` +
+      `Aguardo seu retorno!`;
 
     // Codifica a mensagem
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    // Usa api.whatsapp.com que costuma ser mais robusto para formatação que wa.me
+    // Abre WhatsApp
     window.open(`https://api.whatsapp.com/send?phone=5561982862014&text=${encodedMessage}`, '_blank');
   };
 
@@ -269,89 +256,40 @@ export function Contact() {
           >
             <div className="bg-white rounded-3xl shadow-card p-8 lg:p-10 border border-rose-100">
               <h3 className="font-serif text-2xl font-medium text-dark mb-2">
-                Envie uma mensagem
+                Comece sua transformação
               </h3>
               <p className="text-dark-400 text-sm mb-8">
-                Preencha o formulário abaixo e retornaremos em breve.
+                Deixe seus dados e entraremos em contato em minutos.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-dark text-sm">
-                      Nome completo
-                    </Label>
-                    <Input
-                      name="name"
-                      id="name"
-                      placeholder="Seu nome"
-                      className="border-rose-100 focus:border-rose-400 focus:ring-rose-400/20 rounded-xl py-3"
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-dark text-sm">
-                      Telefone
-                    </Label>
-                    <Input
-                      name="phone"
-                      id="phone"
-                      type="tel"
-                      placeholder="(61) 99999-9999"
-                      value={phoneMask.value}
-                      onChange={phoneMask.onChange}
-                      maxLength={15}
-                      className="border-rose-100 focus:border-rose-400 focus:ring-rose-400/20 rounded-xl py-3"
-                      required
-                    />
-                  </div>
-                </div>
-
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-dark text-sm">
-                    E-mail
+                  <Label htmlFor="name" className="text-dark text-sm">
+                    Seu nome
                   </Label>
                   <Input
-                    name="email"
-                    id="email"
-                    type="email"
-                    placeholder="seu@email.com"
+                    name="name"
+                    id="name"
+                    placeholder="Como podemos te chamar?"
                     className="border-rose-100 focus:border-rose-400 focus:ring-rose-400/20 rounded-xl py-3"
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="service" className="text-dark text-sm">
-                    Serviço de interesse
+                  <Label htmlFor="phone" className="text-dark text-sm">
+                    Seu WhatsApp
                   </Label>
-                  <select
-                    name="service"
-                    id="service"
-                    className="w-full border border-rose-100 focus:border-rose-400 focus:ring-rose-400/20 rounded-xl py-3 px-4 text-dark text-sm bg-white"
-                  >
-                    <option value="">Selecione um serviço</option>
-                    <option value="invisalign">Invisalign</option>
-                    <option value="aparelho">Aparelho HAAS</option>
-                    <option value="infantil">Ortodontia Infantil</option>
-                    <option value="implante">Implantes</option>
-                    <option value="protese">Próteses</option>
-                    <option value="clareamento">Clareamento</option>
-                    <option value="outro">Outro</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-dark text-sm">
-                    Mensagem
-                  </Label>
-                  <Textarea
-                    name="message"
-                    id="message"
-                    placeholder="Como podemos ajudar você?"
-                    rows={4}
-                    className="border-rose-100 focus:border-rose-400 focus:ring-rose-400/20 rounded-xl resize-none"
+                  <Input
+                    name="phone"
+                    id="phone"
+                    type="tel"
+                    placeholder="(61) 99999-9999"
+                    value={phoneMask.value}
+                    onChange={phoneMask.onChange}
+                    maxLength={15}
+                    className="border-rose-100 focus:border-rose-400 focus:ring-rose-400/20 rounded-xl py-3"
+                    required
                   />
                 </div>
 
@@ -360,7 +298,7 @@ export function Contact() {
                   className="w-full bg-rose-400 hover:bg-rose-500 text-white rounded-xl py-3 text-sm font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-button flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4" />
-                  Enviar Mensagem
+                  Quero agendar minha avaliação
                 </Button>
               </form>
             </div>

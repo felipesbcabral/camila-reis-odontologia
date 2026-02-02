@@ -40,7 +40,10 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-1"
           >
-            <a href="#" className="inline-block mb-6">
+            <a href="#" className="inline-flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-rose-400 flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-serif text-lg font-medium">CR</span>
+              </div>
               <span className="font-serif text-xl sm:text-2xl">
                 <span className="text-white">Camila</span>
                 <span className="text-rose-400">Reis</span>
