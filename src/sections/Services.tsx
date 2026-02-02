@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Smile, Sparkles, Baby, CircleDot, Crown, Sun } from 'lucide-react';
+import { ArrowRight, Smile, Stethoscope, Baby, CircleDot, Crown, Sun } from 'lucide-react';
 
 const services = [
   {
@@ -8,13 +8,15 @@ const services = [
     description: 'Alinhadores invisíveis para resultados extraordinários. A tecnologia mais avançada em ortodontia estética.',
     features: ['Transparente', 'Removível', 'Confortável'],
     color: 'rose',
+    whatsappMessage: 'Olá! Tenho interesse em Invisalign.',
   },
   {
-    icon: Sparkles,
+    icon: Stethoscope,
     title: 'Endodontia',
-    description: 'Correção discreta com bráquetes cerâmicos que se fundem naturalmente aos seus dentes.',
-    features: ['Discreto', 'Eficiente', 'Rápido'],
+    description: 'Tratamento de canal moderno e minimamente invasivo. Preservamos seu dente natural com tecnologia de última geração.',
+    features: ['Sem dor', 'Precisão', 'Recuperação rápida'],
     color: 'blue',
+    whatsappMessage: 'Olá! Tenho interesse em Endodontia.',
   },
   {
     icon: Baby,
@@ -22,6 +24,7 @@ const services = [
     description: 'Diagnóstico precoce e tratamento completo. O cuidado ideal para o sorriso do seu filho.',
     features: ['Preventivo', 'Educativo', 'Lúdico'],
     color: 'pink',
+    whatsappMessage: 'Olá! Tenho interesse em Ortodontia Infantil.',
   },
   {
     icon: CircleDot,
@@ -29,6 +32,7 @@ const services = [
     description: 'Reposição de dentes com tecnologia avançada e materiais de última geração.',
     features: ['Duradouro', 'Natural', 'Funcional'],
     color: 'green',
+    whatsappMessage: 'Olá! Tenho interesse em Implantes.',
   },
   {
     icon: Crown,
@@ -36,6 +40,7 @@ const services = [
     description: 'Reabilitação estética e funcional com coroas, pontes e lentes de contato dental.',
     features: ['Personalizado', 'Estético', 'Resistente'],
     color: 'purple',
+    whatsappMessage: 'Olá! Tenho interesse em Próteses.',
   },
   {
     icon: Sun,
@@ -43,6 +48,7 @@ const services = [
     description: 'Sorriso mais branco e radiante com técnicas seguras e resultados duradouros.',
     features: ['Rápido', 'Seguro', 'Eficaz'],
     color: 'yellow',
+    whatsappMessage: 'Olá! Tenho interesse em Clareamento.',
   },
 ];
 
@@ -101,6 +107,7 @@ export function Services() {
               >
                 <service.icon
                   className={`w-7 h-7 ${colorClasses[service.color].icon}`}
+                  strokeWidth={1.5}
                 />
               </motion.div>
 
@@ -125,14 +132,15 @@ export function Services() {
               </div>
 
               {/* Link */}
-              <motion.button 
-                className="inline-flex items-center gap-2 text-rose-400 text-sm font-medium group/link"
-                whileHover={{ x: 4 }}
-                transition={{ duration: 0.2 }}
+              <a 
+                href={`https://wa.me/5561982862014?text=${encodeURIComponent(service.whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-rose-400 hover:text-rose-500 text-sm font-medium group/link"
               >
                 Saiba mais
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-              </motion.button>
+              </a>
             </motion.div>
           ))}
         </div>

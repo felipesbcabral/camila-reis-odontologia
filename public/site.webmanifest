@@ -1,0 +1,14 @@
+{
+  "name": "Instituto Odontológico Camila Reis",
+  "short_name": "Camila Reis",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#d896a1",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

@@ -166,7 +166,7 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+          className="pt-8 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 text-center md:text-left"
         >
           <p className="text-dark-400 text-sm text-center md:text-left">
             © {new Date().getFullYear()} Instituto Odontológico Camila Reis. Todos os direitos reservados.

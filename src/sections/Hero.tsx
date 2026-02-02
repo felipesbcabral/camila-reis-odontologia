@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Award, TrendingUp, Users, Calendar } from 'lucide-react';
+import { Award, TrendingUp, Users, Clock } from 'lucide-react';
 import { OptimizedImage } from '@/components/OptimizedImage';
 
 const containerVariants = {
@@ -87,7 +87,7 @@ export function Hero() {
           >
             {/* Badge */}
             <motion.div variants={itemVariants} className="mb-6">
-              <motion.span 
+              <motion.span
                 className="inline-flex items-center gap-2 px-4 py-2 bg-rose-100 text-rose-500 rounded-full text-sm font-medium cursor-default"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
@@ -190,11 +190,11 @@ export function Hero() {
                 className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 lg:bottom-8 lg:-left-8 bg-white rounded-xl sm:rounded-2xl shadow-card p-3 sm:p-4 flex items-center gap-2 sm:gap-3 animate-pulse-rose"
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-rose-100 flex items-center justify-center">
-                  <Calendar className="w-6 h-6 text-rose-500" />
+                  <Clock className="w-6 h-6 text-rose-500" />
                 </div>
                 <div>
                   <p className="text-dark-400 text-[10px] sm:text-xs">Próxima disponível</p>
-                  <p className="text-dark font-semibold text-xs sm:text-sm">Hoje às 14h</p>
+                  <p className="text-dark font-semibold text-xs sm:text-sm">Agende hoje</p>
                 </div>
               </motion.div>
 
