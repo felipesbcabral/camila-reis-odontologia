@@ -58,19 +58,19 @@ const colorClasses: Record<string, { bg: string; icon: string }> = {
 export function Services() {
   return (
     <section id="servicos" className="py-24 lg:py-32 bg-white">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <p className="text-rose-400 font-medium text-xs tracking-[0.2em] uppercase mb-4">
             NOSSOS SERVIÇOS
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-medium text-dark leading-[1.15] mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-medium text-dark leading-[1.15] mb-3 sm:mb-4">
             Soluções completas para{' '}
             <span className="text-rose-400">seu sorriso</span>
           </h2>
@@ -81,7 +81,7 @@ export function Services() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -89,7 +89,7 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group bg-rose-50 rounded-3xl p-8 hover:bg-white hover:shadow-card-hover transition-all duration-500 border border-transparent hover:border-rose-100"
+              className="group bg-rose-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:bg-white hover:shadow-card-hover transition-all duration-500 border border-transparent hover:border-rose-100"
             >
               {/* Icon */}
               <div
@@ -102,10 +102,10 @@ export function Services() {
               </div>
 
               {/* Content */}
-              <h3 className="font-serif text-xl font-medium text-dark mb-3">
+              <h3 className="font-serif text-lg sm:text-xl font-medium text-dark mb-2 sm:mb-3">
                 {service.title}
               </h3>
-              <p className="text-dark-500 text-sm leading-relaxed mb-6">
+              <p className="text-dark-500 text-sm leading-relaxed mb-4 sm:mb-6">
                 {service.description}
               </p>
 

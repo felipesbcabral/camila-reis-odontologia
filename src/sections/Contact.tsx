@@ -86,19 +86,19 @@ export function Contact() {
 
   return (
     <section id="contato" className="py-24 lg:py-32 bg-rose-50">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <p className="text-rose-400 font-medium text-xs tracking-[0.2em] uppercase mb-4">
             CONTATO
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-medium text-dark leading-[1.15] mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-medium text-dark leading-[1.15] mb-3 sm:mb-4">
             Agende sua{' '}
             <span className="text-rose-400">avaliação</span>
           </h2>
@@ -108,7 +108,7 @@ export function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16">
           {/* Left Column - Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -117,7 +117,7 @@ export function Contact() {
             transition={{ duration: 0.8 }}
           >
             {/* Contact Items */}
-            <div className="space-y-6 mb-10">
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
               {contactInfo.map((item, index) => (
                 <motion.a
                   key={item.label}

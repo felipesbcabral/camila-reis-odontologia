@@ -35,8 +35,8 @@ const stats = [
 export function About() {
   return (
     <section id="sobre" className="py-24 lg:py-32 bg-white">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-24 items-center">
           {/* Left Column - Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -59,9 +59,9 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="absolute -bottom-8 -right-4 lg:bottom-12 lg:-right-8 bg-white rounded-2xl shadow-rose-glow p-6 border border-rose-100"
+                className="absolute -bottom-4 -right-2 sm:-bottom-8 sm:-right-4 lg:bottom-12 lg:-right-8 bg-white rounded-xl sm:rounded-2xl shadow-rose-glow p-4 sm:p-6 border border-rose-100"
               >
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-3 sm:gap-6">
                   {stats.slice(0, 2).map((stat, index) => (
                     <div key={index} className="text-center">
                       <p className="font-serif text-2xl font-semibold text-rose-400">
@@ -99,7 +99,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-medium text-dark leading-[1.15] mb-6"
+              className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-medium text-dark leading-[1.15] mb-4 sm:mb-6"
             >
               Referência em{' '}
               <span className="text-rose-400">Ortodontia Estética</span>
@@ -111,14 +111,14 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="space-y-4 mb-10"
+              className="space-y-3 sm:space-y-4 mb-8 sm:mb-10"
             >
-              <p className="text-dark-500 leading-relaxed">
+              <p className="text-dark-500 leading-relaxed text-sm sm:text-base">
                 Dra. Camila Reis é ortodontista formada pela USP, com mestrado em
                 Ortodontia e especialização em Invisalign. Por <strong className="text-dark">33 vezes consecutivas</strong>,
                 foi reconhecida como a <strong className="text-dark">Nº 1 em tratamentos Invisalign em Brasília</strong>.
               </p>
-              <p className="text-dark-500 leading-relaxed">
+              <p className="text-dark-500 leading-relaxed text-sm sm:text-base">
                 Sua busca constante por excelência a levou a conquistar certificações
                 internacionais e a se tornar uma das poucas ortodontistas no Brasil
                 com o título de <strong className="text-dark">Emerald Provider</strong>, reservado aos melhores
@@ -132,7 +132,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="grid sm:grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
             >
               {highlights.map((item, index) => (
                 <motion.div
@@ -141,13 +141,13 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-rose-50 hover:bg-rose-100 transition-colors duration-300"
+                  className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-rose-50 hover:bg-rose-100 transition-colors duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-rose-100 flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-rose-400" />
                   </div>
                   <div>
-                    <h4 className="text-dark font-semibold text-sm mb-1">
+                    <h4 className="text-dark font-semibold text-sm mb-0.5 sm:mb-1">
                       {item.title}
                     </h4>
                     <p className="text-dark-400 text-xs leading-relaxed">
@@ -164,11 +164,11 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="grid grid-cols-4 gap-4 mt-10 pt-10 border-t border-rose-100"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-10 pt-6 sm:pt-10 border-t border-rose-100"
             >
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <p className="font-serif text-xl lg:text-2xl font-semibold text-rose-400">
+                  <p className="font-serif text-lg sm:text-xl lg:text-2xl font-semibold text-rose-400">
                     {stat.value}
                   </p>
                   <p className="text-dark-400 text-xs mt-1">{stat.label}</p>

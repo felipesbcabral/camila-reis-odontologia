@@ -47,10 +47,23 @@ export function Navigation() {
             {/* Logo */}
             <a
               href="#"
-              className="font-serif text-2xl font-medium tracking-tight"
+              className="flex items-center gap-3 group"
             >
-              <span className="text-dark">Instituto Odontológico </span>
-              <span className="text-rose-400">Camila Reis</span>
+              <div className="w-10 h-10 rounded-full overflow-hidden bg-rose-400 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                <img
+                  src="/images/logo-camila-reis.png"
+                  alt="Logo Instituto Odontológico Camila Reis"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="font-serif text-xl lg:text-2xl font-medium tracking-tight hidden sm:block">
+                <span className="text-dark">Instituto Odontológico </span>
+                <span className="text-rose-400">Camila Reis</span>
+              </span>
+              <span className="font-serif text-xl font-medium tracking-tight sm:hidden">
+                <span className="text-dark">Instituto </span>
+                <span className="text-rose-400">Camila Reis</span>
+              </span>
             </a>
 
             {/* Desktop Navigation */}

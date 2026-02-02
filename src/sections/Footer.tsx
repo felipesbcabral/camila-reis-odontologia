@@ -29,8 +29,8 @@ export function Footer() {
 
   return (
     <footer className="bg-dark-800 pt-20 pb-8">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-dark-700">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-8 pb-10 sm:pb-12 border-b border-dark-700">
           {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,12 +40,12 @@ export function Footer() {
             className="lg:col-span-1"
           >
             <a href="#" className="inline-block mb-6">
-              <span className="font-serif text-2xl">
+              <span className="font-serif text-xl sm:text-2xl">
                 <span className="text-white">Camila</span>
                 <span className="text-rose-400">Reis</span>
               </span>
             </a>
-            <p className="text-dark-400 text-sm leading-relaxed mb-6">
+            <p className="text-dark-400 text-sm leading-relaxed mb-4 sm:mb-6">
               Referência em Ortodontia Estética em Brasília.
               Transformando sorrisos com tecnologia e excelência.
             </p>

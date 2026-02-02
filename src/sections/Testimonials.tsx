@@ -82,12 +82,12 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <p className="text-rose-400 font-medium text-xs tracking-[0.2em] uppercase mb-4">
             DEPOIMENTOS
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-medium text-white leading-[1.15]">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-medium text-white leading-[1.15]">
             O que nossos pacientes{' '}
             <span className="text-rose-400">dizem</span>
           </h2>
@@ -99,7 +99,7 @@ export function Testimonials() {
           <Quote className="absolute -top-4 left-0 w-16 h-16 text-rose-400/20" />
 
           {/* Testimonial Content */}
-          <div className="relative min-h-[400px] flex items-center justify-center">
+          <div className="relative min-h-[350px] sm:min-h-[400px] flex items-center justify-center">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -122,7 +122,7 @@ export function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <p className="text-white/90 text-lg lg:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
+                <p className="text-white/90 text-base sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                   "{testimonials[currentIndex].text}"
                 </p>
 

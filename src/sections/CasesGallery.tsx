@@ -51,19 +51,19 @@ export function CasesGallery() {
 
   return (
     <section id="casos" className="py-24 lg:py-32 bg-rose-50">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-10 sm:mb-12"
         >
           <p className="text-rose-400 font-medium text-xs tracking-[0.2em] uppercase mb-4">
             RESULTADOS REAIS
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-medium text-dark leading-[1.15] mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-medium text-dark leading-[1.15] mb-3 sm:mb-4">
             Transformações que{' '}
             <span className="text-rose-400">falam por si</span>
           </h2>
@@ -79,7 +79,7 @@ export function CasesGallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-2 mb-12"
+          className="flex flex-wrap justify-center gap-2 mb-10 sm:mb-12"
         >
           {categories.map((category) => (
             <button
@@ -96,7 +96,7 @@ export function CasesGallery() {
         </motion.div>
 
         {/* Cases Grid */}
-        <motion.div layout className="grid md:grid-cols-2 gap-8">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <AnimatePresence mode="popLayout">
             {filteredCases.map((caseItem) => (
               <motion.div

@@ -6,6 +6,7 @@ import { VideoApresentacao } from './sections/VideoApresentacao';
 import { About } from './sections/About';
 import { Technology } from './sections/Technology';
 import { CasesGallery } from './sections/CasesGallery';
+import { ClinicStructure } from './sections/ClinicStructure';
 import { Services } from './sections/Services';
 import { Testimonials } from './sections/Testimonials';
 import { Contact } from './sections/Contact';
@@ -30,6 +31,7 @@ function App() {
         <About />
         <Technology />
         <CasesGallery />
+        <ClinicStructure />
         <Services />
         <Testimonials />
         <Contact />
