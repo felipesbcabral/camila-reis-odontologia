@@ -144,7 +144,7 @@ export function About() {
                   className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-rose-50 hover:bg-rose-100 transition-colors duration-300"
                 >
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-rose-100 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-rose-400" />
+                    <item.icon className="w-5 h-5 text-rose-400" strokeWidth={1.5} />
                   </div>
                   <div>
                     <h4 className="text-dark font-semibold text-sm mb-0.5 sm:mb-1">

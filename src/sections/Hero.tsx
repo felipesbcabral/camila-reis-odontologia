@@ -111,8 +111,7 @@ export function Hero() {
               variants={itemVariants}
               className="text-dark-500 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg"
             >
-              Instituto Odontológico Camila Reis
-              Tecnologia de ponta para resultados extraordinários.
+              Instituto Odontológico Camila Reis. Tecnologia de ponta para resultados extraordinários.
             </motion.p>
 
             {/* CTAs */}

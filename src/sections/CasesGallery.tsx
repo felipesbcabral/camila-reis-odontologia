@@ -178,10 +178,15 @@ export function CasesGallery() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-center mt-12"
         >
-          <button className="inline-flex items-center gap-2 text-rose-400 hover:text-rose-500 font-medium transition-colors group">
+          <a 
+            href="https://wa.me/5561982862014?text=Olá! Gostaria de ver mais casos de antes e depois."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-rose-400 hover:text-rose-500 font-medium transition-colors group"
+          >
             Ver todos os casos
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </motion.div>
       </div>
 

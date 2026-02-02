@@ -88,7 +88,7 @@ export function ClinicStructure() {
             className="flex items-center justify-center gap-2 mt-6 text-dark-400 text-sm"
           >
             <MapPin className="w-4 h-4 text-rose-400" />
-            <span>Brasília Shopping, Torre Sul, Sala 504</span>
+            <span>Brasília Shopping - SCN Qd 05 Bl A n 50, Torre Sul sala 504</span>
           </motion.div>
         </motion.div>
 

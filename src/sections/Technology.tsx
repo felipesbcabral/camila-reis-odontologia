@@ -14,7 +14,7 @@ const technologies = [
       'Precisão de 20 microns',
       'Experiência confortável',
     ],
-    image: '/images/iTero Lumina.jpg',
+    image: '/images/itero-lumina.jpg',
   },
   {
     icon: Sparkles,
