@@ -85,21 +85,24 @@ export function Services() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group bg-rose-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:bg-white hover:shadow-card-hover transition-all duration-500 border border-transparent hover:border-rose-100"
+              transition={{ delay: index * 0.08, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+              whileHover={{ y: -4 }}
+              className="group bg-rose-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:bg-white hover:shadow-card-hover transition-all duration-500 border border-transparent hover:border-rose-100 cursor-pointer"
             >
               {/* Icon */}
-              <div
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 2 }}
+                transition={{ duration: 0.3 }}
                 className={`w-14 h-14 rounded-2xl ${colorClasses[service.color].bg
-                  } flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  } flex items-center justify-center mb-6`}
               >
                 <service.icon
                   className={`w-7 h-7 ${colorClasses[service.color].icon}`}
                 />
-              </div>
+              </motion.div>
 
               {/* Content */}
               <h3 className="font-serif text-lg sm:text-xl font-medium text-dark mb-2 sm:mb-3">
@@ -114,7 +117,7 @@ export function Services() {
                 {service.features.map((feature) => (
                   <span
                     key={feature}
-                    className="px-3 py-1 bg-white group-hover:bg-rose-50 rounded-full text-xs text-dark-400"
+                    className="px-3 py-1 bg-white group-hover:bg-rose-50 rounded-full text-xs text-dark-400 transition-colors duration-300"
                   >
                     {feature}
                   </span>
@@ -122,10 +125,14 @@ export function Services() {
               </div>
 
               {/* Link */}
-              <button className="inline-flex items-center gap-2 text-rose-400 hover:text-rose-500 text-sm font-medium transition-colors group/link">
+              <motion.button 
+                className="inline-flex items-center gap-2 text-rose-400 text-sm font-medium group/link"
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.2 }}
+              >
                 Saiba mais
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-              </button>
+              </motion.button>
             </motion.div>
           ))}
         </div>

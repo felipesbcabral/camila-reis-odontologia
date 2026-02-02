@@ -12,8 +12,8 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Endereço',
-    value: 'Brasília Shopping, Torre Sul, Sala 504\nAsa Sul, Brasília - DF',
-    href: 'https://maps.google.com/?q=Brasília+Shopping+Torre+Sul+Sala+504+Brasília+DF',
+    value: 'Instituto Camila Reis\nBrasília Shopping - SCN Quadra 05 Bloco A n 50\nTorre Sul sala 504 - Asa Norte, Brasília - DF\n70715-900',
+    href: 'https://maps.google.com/?q=Instituto+Camila+Reis+Brasília+Shopping+SCN+Quadra+05+Bloco+A+50+Torre+Sul+sala+504+Asa+Norte+Brasília+DF+70715-900',
     isExternal: true,
   },
   {
@@ -28,7 +28,7 @@ const contactInfo = [
     value: '(61) 98286-2014',
     href: 'https://wa.me/5561982862014',
     isExternal: true,
-    isBrand: true,
+    isBrand: false,
   },
   {
     icon: Mail,
@@ -46,7 +46,7 @@ const contactInfo = [
 
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/dra_camila_reis', label: 'Instagram' },
-  { icon: WhatsAppIcon, href: 'https://wa.me/5561982862014', label: 'WhatsApp', isBrand: true },
+  { icon: WhatsAppIcon, href: 'https://wa.me/5561982862014', label: 'WhatsApp', isBrand: false },
 ];
 
 export function Contact() {
@@ -190,7 +190,7 @@ export function Contact() {
               className="mt-8 sm:mt-10"
             >
               <a 
-                href="https://maps.google.com/?q=Brasília+Shopping+Torre+Sul+Sala+504+Brasília+DF"
+                href="https://maps.google.com/?q=Instituto+Camila+Reis+Brasília+Shopping+SCN+Quadra+05+Bloco+A+50+Torre+Sul+sala+504+Asa+Norte+Brasília+DF+70715-900"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group"
@@ -218,11 +218,12 @@ export function Contact() {
                   {/* Address info */}
                   <div className="p-4 bg-white">
                     <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-dark font-medium text-sm">Brasília Shopping</p>
-                        <p className="text-dark-400 text-xs">Torre Sul, Sala 504 - Asa Sul</p>
+                      <div className="flex-1 pr-3">
+                        <p className="text-dark font-medium text-sm">Instituto Camila Reis</p>
+                        <p className="text-dark-400 text-xs leading-tight">Brasília Shopping - SCN Qd 05 Bl A n 50</p>
+                        <p className="text-dark-400 text-xs">Torre Sul sala 504 - Asa Norte</p>
                       </div>
-                      <div className="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center group-hover:bg-rose-400 transition-colors duration-300">
+                      <div className="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center group-hover:bg-rose-400 transition-colors duration-300 flex-shrink-0">
                         <ExternalLink className="w-4 h-4 text-rose-400 group-hover:text-white transition-colors" />
                       </div>
                     </div>

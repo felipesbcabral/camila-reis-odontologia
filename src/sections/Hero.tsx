@@ -9,20 +9,20 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
-      ease: [0.16, 1, 0.3, 1] as const,
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1] as const,
     },
   },
 };
@@ -87,10 +87,14 @@ export function Hero() {
           >
             {/* Badge */}
             <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-rose-100 text-rose-500 rounded-full text-sm font-medium">
+              <motion.span 
+                className="inline-flex items-center gap-2 px-4 py-2 bg-rose-100 text-rose-500 rounded-full text-sm font-medium cursor-default"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Award className="w-4 h-4" />
                 33x Consecutivas Nº 1 Invisalign Brasília
-              </span>
+              </motion.span>
             </motion.div>
 
             {/* Heading */}
@@ -116,19 +120,23 @@ export function Hero() {
               variants={itemVariants}
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12"
             >
-              <Button
-                onClick={() => scrollToSection('#contato')}
-                className="bg-rose-400 hover:bg-rose-500 text-white rounded-full px-6 sm:px-8 py-3 text-sm font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-button w-full sm:w-auto"
-              >
-                Agendar Avaliação
-              </Button>
-              <Button
-                onClick={() => scrollToSection('#casos')}
-                variant="outline"
-                className="border-dark-200 text-dark hover:bg-dark hover:text-white rounded-full px-6 sm:px-8 py-3 text-sm font-medium transition-all duration-300 w-full sm:w-auto"
-              >
-                Ver Casos Reais
-              </Button>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
+                <Button
+                  onClick={() => scrollToSection('#contato')}
+                  className="bg-rose-400 hover:bg-rose-500 text-white rounded-full px-6 sm:px-8 py-3 text-sm font-medium transition-all duration-300 hover:shadow-button w-full"
+                >
+                  Agendar Avaliação
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
+                <Button
+                  onClick={() => scrollToSection('#casos')}
+                  variant="outline"
+                  className="border-dark-200 text-dark hover:bg-dark hover:text-white rounded-full px-6 sm:px-8 py-3 text-sm font-medium transition-all duration-300 w-full"
+                >
+                  Ver Casos Reais
+                </Button>
+              </motion.div>
             </motion.div>
 
             {/* Stats */}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Instagram, MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
+import { Instagram, MapPin, Phone, Mail } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 const quickLinks = [
   { name: 'Sobre', href: '#sobre' },
@@ -66,7 +67,7 @@ export function Footer() {
                 className="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center text-dark-400 hover:bg-green-500 hover:text-white transition-all duration-300"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="w-5 h-5" />
+                <WhatsAppIcon className="w-5 h-5" />
               </a>
             </div>
           </motion.div>
