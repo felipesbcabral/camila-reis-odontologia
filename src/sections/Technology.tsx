@@ -84,7 +84,7 @@ export function Technology() {
             {/* Image */}
             <div className="order-2 lg:order-1">
               <OptimizedImage
-                src={technologies[0].image}
+                src={technologies[0].image || '/images/iTero Lumina.jpg'}
                 alt={`${technologies[0].name} - Scanner intraoral 3D`}
                 className="w-full rounded-2xl"
               />
