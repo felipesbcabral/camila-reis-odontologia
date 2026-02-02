@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { AuthorityBar } from './sections/AuthorityBar';
@@ -33,6 +34,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </motion.div>
   );
 }
